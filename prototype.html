@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TellYourPhone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+        .navbar {
+            background-color: #000000;
+        }
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+        }
+        .header {
+            text-align: center;
+            padding: 50px 0;
+        }
+        .category-icons img {
+            width: 50px;
+            margin: 10px;
+        }
+        .product-section .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .features {
+            padding: 40px 0;
+        }
+        .footer {
+            background-color: #f1f1f1;
+            padding: 40px 0;
+        }
+        .product-comparison table {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .product-comparison th, .product-comparison td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .banner {
+            background: url('Banner.PNG') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        .product-card {
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-card .card-body {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .product-card .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .product-card .card-text {
+            font-size: 1rem;
+            color: #ddd;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .standard-size {
+            height: 400px;
+            width: 180px;
+        }
+        .brand-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+        }
+        .brand-card img {
+            max-width: 100px;
+        }
+        .popular-section h2 {
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+        .brand-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .brand-row .brand-card {
+            flex: 1;
+            margin: 10px;
+        }
+        .card-footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">TellYourPhone</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-mobile-alt"></i> Telefoons</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-file-contract"></i> Abonnementen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-headphones-alt"></i> Accessoires</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-tags"></i> Aanbiedingen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-envelope"></i> Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+<div class="banner">
+    <h1 class="my-4">Dé plek om alles te kopen waar je dol op bent.</h1>
+</div>
+
+<div class="container text-center">
+    <div class="category-icons">
+        <img src="provider.png" alt="Provider">
+        <img src="iphone.png" alt="iPhone">
+        <img src="ipad.png" alt="Abonnoment">
+    </div>
+</div>
+
+<div class="container product-section">
+    <h2 class="header">Het allernieuwste. Bekijk het allemaal hier.</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card product-card">
+                <img class="card-img-top" src="pictures/image.png" alt="Phone 1">
+                <div class="card-body">
+                    <h5 class="card-title">Titanium</h5>
+                    <p class="card-text">Vanaf € 1.229</p>
+                    <a href="#" class="btn btn-primary">Meer info</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card product-card">
+                <img class="card-img-top" src="pictures/image.png" alt="Phone 2">
+                <div class="card-body">
+                    <h5 class="card-title">Onmogelijk dun</h5>
+                    <p class="card-text">Vanaf € 1.219</p>
+                    <a href="#" class="btn btn-primary">Meer info</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card product-card">
+                <img class="card-img-top" src="pictures/image.png" alt="Phone 3">
+                <div class="card-body">
+                    <h5 class="card-title">Laat je licht stralen</h5>
+                    <p class="card-text">Vanaf € 99</p>
+                    <a href="#" class="btn btn-primary">Meer info</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container popular-section">
+    <h2>Populaire telefoons</h2>
+    <div class="row">
+        <div class="col-md-2">
+            <div class="card product-card standard-size">
+                <img class="card-img-top" src="pictures/GalaxyS24.png" alt="Phone 1">
+                <div class="card-body">
+                    <h5 class="card-title">Samsung Galaxy S24 Ultra</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card product-card standard-size">
+                <img class="card-img-top" src="pictures/Iphone15.png" alt="Phone 2">
+                <div class="card-body">
+                    <h5 class="card-title">Apple iPhone 15</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card product-card standard-size">
+                <img class="card-img-top" src="pictures/GalaxyS24NonUltra.png" alt="Phone 3">
+                <div class="card-body">
+                    <h5 class="card-title">Samsung Galaxy S24</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card product-card standard-size">
+                <img class="card-img-top" src="pictures/Iphone15Pro.png" alt="Phone 4">
+                <div class="card-body">
+                    <h5 class="card-title">Apple iPhone 15 Pro</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card product-card standard-size">
+                <img class="card-img-top" src="pictures/GalaxyA55.png" alt="Phone 5">
+                <div class="card-body">
+                    <h5 class="card-title">Samsung Galaxy A55 5G</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card product-card standard-size">
+                <img class="card-img-top" src="pictures/Oneplus12.png" alt="Phone 6">
+                <div class="card-body">
+                    <h5 class="card-title">OnePlus 12</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container popular-section">
+    <h2>Alle merken</h2>
+    <div class="brand-row">
+        <div class="brand-card">
+            <img src="pictures/apple.png" alt="Apple">
+        </div>
+        <div class="brand-card">
+            <img src="pictures/samsung.png" alt="Samsung">
+        </div>
+        <div class="brand-card">
+            <img src="pictures/oppo.png" alt="Oppo">
+        </div>
+        <div class="brand-card">
+            <img src="pictures/oneplus.png" alt="OnePlus">
+        </div>
+        <div class="brand-card">
+            <img src="pictures/imgix.png" alt="Xiaomi">
+        </div>
+    </div>
+</div>
+
+<div class="container product-section">
+    <h2 class="header">Populaire telefoons met abonnement</h2>
+    <div class="row">
+        <div class="col-md-2">
+            <div class="card product-card standard-size">
+                <img class="card-img-top" src="pictures/Iphone15.png" alt="Phone 1">
+                <div class="card-body">
+                    <h5 class="card-title">Apple iPhone 15</h5>
+                    <p class="card-text">10 GB<br>120 minuten</p>
+                    <p class="card-text">€42,50/mnd</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card product-card standard-size">
+                <img class="card-img-top" src="pictures/GalaxyS24NonUltra.png" alt="Phone 2">
+                <div class="card-body">
+                    <h5 class="card-title">Samsung Galaxy S24</h5>
+                    <p class="card-text">20 GB<br>Onbp min</p>
+                    <p class="card-text">€47,50/mnd</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card product-card standard-size">
+                <img class="card-img-top" src="pictures/Iphone14.png" alt="Phone 3">
+                <div class="card-body">
+                    <h5 class="card-title">Apple iPhone 14</h5>
+                    <p class="card-text">15 GB<br>150 minuten</p>
+                    <p class="card-text">€40,-/mnd</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card product-card standard-size">
+                <img class="card-img-top" src="pictures/GalaxyA55.png" alt="Phone 4">
+                <div class="card-body">
+                    <h5 class="card-title">Samsung Galaxy A55 5G</h5>
+                    <p class="card-text">15 GB<br>200 minuten</p>
+                    <p class="card-text">€22,50/mnd</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card product-card standard-size">
+                <img class="card-img-top" src="pictures/Iphone15Pro.png" alt="Phone 5">
+                <div class="card-body">
+                    <h5 class="card-title">Apple iPhone 15 Pro</h5>
+                    <p class="card-text">20 GB<br>Onbp min</p>
+                    <p class="card-text">€58,50/mnd</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card product-card standard-size">
+                <img class="card-img-top" src="pictures/GalaxyS24.png" alt="Phone 6">
+                <div class="card-body">
+                    <h5 class="card-title">Samsung Galaxy S24 Ultra</h5>
+                    <p class="card-text">20 GB<br>Onbp min</p>
+                    <p class="card-text">€64,50/mnd</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container features">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Live Chat Ondersteuning</h5>
+                    <p class="card-text">Onze live chat is 24/7 beschikbaar om al je vragen te beantwoorden.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Loyaliteitsprogramma</h5>
+                    <p class="card-text">Spaar punten voor elke aankoop en wissel ze in voor kortingen en gratis producten.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Aanbevolen Producten</h5>
+                    <p class="card-text">Ontvang gepersonaliseerde aanbevelingen op basis van je browse- en koopgeschiedenis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container product-comparison">
+    <h2>Vergelijk Producten</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Prijs</th>
+                <th>Specificaties</th>
+                <th>Beoordelingen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Apple iPhone 15</td>
+                <td>€499</td>
+                <td>4GB RAM, 64GB Opslag</td>
+                <td>★★★★☆</td>
+            </tr>
+            <tr>
+                <td>Samsung Galaxy A55 5G</td>
+                <td>€599</td>
+                <td>6GB RAM, 128GB Opslag</td>
+                <td>★★★★★</td>
+            </tr>
+            <tr>
+                <td>Apple iPhone 15 Pro</td>
+                <td>€699</td>
+                <td>8GB RAM, 256GB Opslag</td>
+                <td>★★★☆☆</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted mt-4 footer">
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <div class="me-5 d-none d-lg-block">
+            <span>Connect with us on social networks:</span>
+        </div>
+        <div>
+            <a href="#" class="me-4 text-reset">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="me-4 text-reset">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="me-4 text-reset">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="#" class="me-4 text-reset">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="me-4 text-reset">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#" class="me-4 text-reset">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="p-4">
+        <div class="container text-center text-md-start">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        <i class="fas fa-gem me-3"></i>TellYourPhone
+                    </h6>
+                    <p>
+                        De beste telefoons en abonnementen, speciaal voor jou samengesteld.
+                    </p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Producten
+                    </h6>
+                    <p><a href="#" class="text-reset">Telefoons</a></p>
+                    <p><a href="#" class="text-reset">Abonnementen</a></p>
+                    <p><a href="#" class="text-reset">Accessoires</a></p>
+                    <p><a href="#" class="text-reset">Aanbiedingen</a></p>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Nuttige links
+                    </h6>
+                    <p><a href="#" class="text-reset">Account</a></p>
+                    <p><a href="#" class="text-reset">Bestellingen</a></p>
+                    <p><a href="#" class="text-reset">Winkelwagen</a></p>
+                    <p><a href="#" class="text-reset">Help</a></p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Contact
+                    </h6>
+                    <p><i class="fas fa-home me-3"></i> Amsterdam, Nederland</p>
+                    <p><i class="fas fa-envelope me-3"></i> info@tellyourphone.com</p>
+                    <p><i class="fas fa-phone me-3"></i> + 31 234 567 88</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="text-center p-4">
+        © 2024 Copyright:
+        <a class="text-reset fw-bold" href="#">TellYourPhone.com</a>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</body>
+</html>

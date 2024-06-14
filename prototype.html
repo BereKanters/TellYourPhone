@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,119 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-    <style>
-        body {
-            font-family: 'Lato', sans-serif;
-        }
-        .navbar {
-            background-color: #000000;
-        }
-        .navbar-brand, .nav-link {
-            color: #fff !important;
-        }
-        .header {
-            text-align: center;
-            padding: 50px 0;
-        }
-        .category-icons img {
-            width: 50px;
-            margin: 10px;
-        }
-        .product-section .card-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-        .features {
-            padding: 40px 0;
-        }
-        .footer {
-            background-color: #f1f1f1;
-            padding: 40px 0;
-        }
-        .product-comparison table {
-            width: 100%;
-            margin-top: 20px;
-        }
-        .product-comparison th, .product-comparison td {
-            padding: 10px;
-            text-align: center;
-            border: 1px solid #ddd;
-        }
-        .banner {
-            background: url('Banner.PNG') no-repeat center center;
-            background-size: cover;
-            color: white;
-            text-align: center;
-            padding: 100px 0;
-        }
-        .product-card {
-            background-color: #000;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .product-card .card-body {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-        }
-        .product-card .card-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .product-card .card-text {
-            font-size: 1rem;
-            color: #ddd;
-        }
-        .product-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        .standard-size {
-            height: 400px;
-            width: 180px;
-        }
-        .brand-card {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            overflow: hidden;
-            text-align: center;
-            padding: 20px;
-            margin: 10px;
-        }
-        .brand-card img {
-            max-width: 100px;
-        }
-        .popular-section h2 {
-            margin-top: 50px;
-            margin-bottom: 30px;
-        }
-        .brand-row {
-            display: flex;
-            justify-content: space-between;
-        }
-        .brand-row .brand-card {
-            flex: 1;
-            margin: 10px;
-        }
-        .card-footer {
-            margin-top: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
-<body>
 
+<body>
+    <!-- Navigatiebalk -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="#">TellYourPhone</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -139,341 +36,1016 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fas fa-envelope"></i> Contact</a>
                 </li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-light" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+                </li>
             </ul>
         </div>
     </nav>
 
-<div class="banner">
-    <h1 class="my-4">Dé plek om alles te kopen waar je dol op bent.</h1>
-</div>
-
-<div class="container text-center">
-    <div class="category-icons">
-        <img src="provider.png" alt="Provider">
-        <img src="iphone.png" alt="iPhone">
-        <img src="ipad.png" alt="Abonnoment">
+    <!-- Banner met video -->
+    <div class="banner">
+        <video autoplay muted loop>
+            <source
+                src="https://www.apple.com/105/media/us/iphone/family/2024/1efec3e0-8619-4684-a57e-6e2310394f08/anim/welcome/xlarge_2x.mp4"
+                type="video/mp4">
+        </video>
+        <h1 class="my-4">Dé plek om alles te kopen waar je dol op bent.</h1>
     </div>
-</div>
 
-<div class="container product-section">
-    <h2 class="header">Het allernieuwste. Bekijk het allemaal hier.</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card product-card">
-                <img class="card-img-top" src="pictures/image.png" alt="Phone 1">
-                <div class="card-body">
-                    <h5 class="card-title">Titanium</h5>
-                    <p class="card-text">Vanaf € 1.229</p>
-                    <a href="#" class="btn btn-primary">Meer info</a>
+    <!-- Product sectie -->
+    <div class="container product-section">
+        <h2 class="header">Het allernieuwste. Bekijk het allemaal hier.</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card product-card" data-toggle="modal" data-target="#productModal1">
+                    <img class="card-img-top" src="pictures/image.png" alt="Phone 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Titanium</h5>
+                        <p class="card-text">Vanaf € 1.229</p>
+                        <a href="#" class="btn btn-primary">Meer info</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card product-card">
-                <img class="card-img-top" src="pictures/image.png" alt="Phone 2">
-                <div class="card-body">
-                    <h5 class="card-title">Onmogelijk dun</h5>
-                    <p class="card-text">Vanaf € 1.219</p>
-                    <a href="#" class="btn btn-primary">Meer info</a>
+            <div class="col-md-4">
+                <div class="card product-card" data-toggle="modal" data-target="#productModal2">
+                    <img class="card-img-top" src="pictures/image.png" alt="Phone 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Onmogelijk dun</h5>
+                        <p class="card-text">Vanaf € 1.219</p>
+                        <a href="#" class="btn btn-primary">Meer info</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card product-card">
-                <img class="card-img-top" src="pictures/image.png" alt="Phone 3">
-                <div class="card-body">
-                    <h5 class="card-title">Laat je licht stralen</h5>
-                    <p class="card-text">Vanaf € 99</p>
-                    <a href="#" class="btn btn-primary">Meer info</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container popular-section">
-    <h2>Populaire telefoons</h2>
-    <div class="row">
-        <div class="col-md-2">
-            <div class="card product-card standard-size">
-                <img class="card-img-top" src="pictures/GalaxyS24.png" alt="Phone 1">
-                <div class="card-body">
-                    <h5 class="card-title">Samsung Galaxy S24 Ultra</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="card product-card standard-size">
-                <img class="card-img-top" src="pictures/Iphone15.png" alt="Phone 2">
-                <div class="card-body">
-                    <h5 class="card-title">Apple iPhone 15</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="card product-card standard-size">
-                <img class="card-img-top" src="pictures/GalaxyS24NonUltra.png" alt="Phone 3">
-                <div class="card-body">
-                    <h5 class="card-title">Samsung Galaxy S24</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="card product-card standard-size">
-                <img class="card-img-top" src="pictures/Iphone15Pro.png" alt="Phone 4">
-                <div class="card-body">
-                    <h5 class="card-title">Apple iPhone 15 Pro</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="card product-card standard-size">
-                <img class="card-img-top" src="pictures/GalaxyA55.png" alt="Phone 5">
-                <div class="card-body">
-                    <h5 class="card-title">Samsung Galaxy A55 5G</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="card product-card standard-size">
-                <img class="card-img-top" src="pictures/Oneplus12.png" alt="Phone 6">
-                <div class="card-body">
-                    <h5 class="card-title">OnePlus 12</h5>
+            <div class="col-md-4">
+                <div class="card product-card" data-toggle="modal" data-target="#productModal3">
+                    <img class="card-img-top" src="pictures/image.png" alt="Phone 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Laat je licht stralen</h5>
+                        <p class="card-text">Vanaf € 99</p>
+                        <a href="#" class="btn btn-primary">Meer info</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="container popular-section">
-    <h2>Alle merken</h2>
-    <div class="brand-row">
-        <div class="brand-card">
-            <img src="pictures/apple.png" alt="Apple">
-        </div>
-        <div class="brand-card">
-            <img src="pictures/samsung.png" alt="Samsung">
-        </div>
-        <div class="brand-card">
-            <img src="pictures/oppo.png" alt="Oppo">
-        </div>
-        <div class="brand-card">
-            <img src="pictures/oneplus.png" alt="OnePlus">
-        </div>
-        <div class="brand-card">
-            <img src="pictures/imgix.png" alt="Xiaomi">
-        </div>
-    </div>
-</div>
-
-<div class="container product-section">
-    <h2 class="header">Populaire telefoons met abonnement</h2>
-    <div class="row">
-        <div class="col-md-2">
-            <div class="card product-card standard-size">
-                <img class="card-img-top" src="pictures/Iphone15.png" alt="Phone 1">
-                <div class="card-body">
-                    <h5 class="card-title">Apple iPhone 15</h5>
-                    <p class="card-text">10 GB<br>120 minuten</p>
-                    <p class="card-text">€42,50/mnd</p>
+    <!-- Populaire telefoons sectie -->
+    <div class="container popular-section">
+        <h2>Populaire telefoons</h2>
+        <div id="carouselExample" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="card product-card standard-size" data-toggle="modal" data-target="#productModal4">
+                                <img class="card-img-top" src="pictures/GalaxyS24.png" alt="Phone 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung Galaxy S24 Ultra</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card product-card standard-size" data-toggle="modal" data-target="#productModal5">
+                                <img class="card-img-top" src="pictures/Iphone15.png" alt="Phone 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Apple iPhone 15</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card product-card standard-size" data-toggle="modal" data-target="#productModal6">
+                                <img class="card-img-top" src="pictures/GalaxyS24NonUltra.png" alt="Phone 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung Galaxy S24</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card product-card standard-size" data-toggle="modal" data-target="#productModal7">
+                                <img class="card-img-top" src="pictures/Iphone15Pro.png" alt="Phone 4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Apple iPhone 15 Pro</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card product-card standard-size" data-toggle="modal" data-target="#productModal8">
+                                <img class="card-img-top" src="pictures/GalaxyA55.png" alt="Phone 5">
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung Galaxy A55 5G</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card product-card standard-size" data-toggle="modal" data-target="#productModal9">
+                                <img class="card-img-top" src="pictures/Oneplus12.png" alt="Phone 6">
+                                <div class="card-body">
+                                    <h5 class="card-title">OnePlus 12</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="card product-card standard-size" data-toggle="modal" data-target="#productModal10">
+                                <img class="card-img-top" src="pictures/GalaxyS24.png" alt="Phone 7">
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung Galaxy S24 Ultra</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card product-card standard-size" data-toggle="modal" data-target="#productModal11">
+                                <img class="card-img-top" src="pictures/Iphone15.png" alt="Phone 8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Apple iPhone 15</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card product-card standard-size" data-toggle="modal" data-target="#productModal12">
+                                <img class="card-img-top" src="pictures/GalaxyS24NonUltra.png" alt="Phone 9">
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung Galaxy S24</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card product-card standard-size" data-toggle="modal" data-target="#productModal13">
+                                <img class="card-img-top" src="pictures/Iphone15Pro.png" alt="Phone 10">
+                                <div class="card-body">
+                                    <h5 class="card-title">Apple iPhone 15 Pro</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card product-card standard-size" data-toggle="modal" data-target="#productModal14">
+                                <img class="card-img-top" src="pictures/GalaxyA55.png" alt="Phone 11">
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung Galaxy A55 5G</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card product-card standard-size" data-toggle="modal" data-target="#productModal15">
+                                <img class="card-img-top" src="pictures/Oneplus12.png" alt="Phone 12">
+                                <div class="card-body">
+                                    <h5 class="card-title">OnePlus 12</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-2">
-            <div class="card product-card standard-size">
-                <img class="card-img-top" src="pictures/GalaxyS24NonUltra.png" alt="Phone 2">
-                <div class="card-body">
-                    <h5 class="card-title">Samsung Galaxy S24</h5>
-                    <p class="card-text">20 GB<br>Onbp min</p>
-                    <p class="card-text">€47,50/mnd</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="card product-card standard-size">
-                <img class="card-img-top" src="pictures/Iphone14.png" alt="Phone 3">
-                <div class="card-body">
-                    <h5 class="card-title">Apple iPhone 14</h5>
-                    <p class="card-text">15 GB<br>150 minuten</p>
-                    <p class="card-text">€40,-/mnd</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="card product-card standard-size">
-                <img class="card-img-top" src="pictures/GalaxyA55.png" alt="Phone 4">
-                <div class="card-body">
-                    <h5 class="card-title">Samsung Galaxy A55 5G</h5>
-                    <p class="card-text">15 GB<br>200 minuten</p>
-                    <p class="card-text">€22,50/mnd</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="card product-card standard-size">
-                <img class="card-img-top" src="pictures/Iphone15Pro.png" alt="Phone 5">
-                <div class="card-body">
-                    <h5 class="card-title">Apple iPhone 15 Pro</h5>
-                    <p class="card-text">20 GB<br>Onbp min</p>
-                    <p class="card-text">€58,50/mnd</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="card product-card standard-size">
-                <img class="card-img-top" src="pictures/GalaxyS24.png" alt="Phone 6">
-                <div class="card-body">
-                    <h5 class="card-title">Samsung Galaxy S24 Ultra</h5>
-                    <p class="card-text">20 GB<br>Onbp min</p>
-                    <p class="card-text">€64,50/mnd</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container features">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Live Chat Ondersteuning</h5>
-                    <p class="card-text">Onze live chat is 24/7 beschikbaar om al je vragen te beantwoorden.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Loyaliteitsprogramma</h5>
-                    <p class="card-text">Spaar punten voor elke aankoop en wissel ze in voor kortingen en gratis producten.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Aanbevolen Producten</h5>
-                    <p class="card-text">Ontvang gepersonaliseerde aanbevelingen op basis van je browse- en koopgeschiedenis.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container product-comparison">
-    <h2>Vergelijk Producten</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Product</th>
-                <th>Prijs</th>
-                <th>Specificaties</th>
-                <th>Beoordelingen</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Apple iPhone 15</td>
-                <td>€499</td>
-                <td>4GB RAM, 64GB Opslag</td>
-                <td>★★★★☆</td>
-            </tr>
-            <tr>
-                <td>Samsung Galaxy A55 5G</td>
-                <td>€599</td>
-                <td>6GB RAM, 128GB Opslag</td>
-                <td>★★★★★</td>
-            </tr>
-            <tr>
-                <td>Apple iPhone 15 Pro</td>
-                <td>€699</td>
-                <td>8GB RAM, 256GB Opslag</td>
-                <td>★★★☆☆</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted mt-4 footer">
-    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-        <div class="me-5 d-none d-lg-block">
-            <span>Connect with us on social networks:</span>
-        </div>
-        <div>
-            <a href="#" class="me-4 text-reset">
-                <i class="fab fa-facebook-f"></i>
+            <!-- Carousel navigatie -->
+            <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
             </a>
-            <a href="#" class="me-4 text-reset">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="me-4 text-reset">
-                <i class="fab fa-google"></i>
-            </a>
-            <a href="#" class="me-4 text-reset">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="me-4 text-reset">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="#" class="me-4 text-reset">
-                <i class="fab fa-github"></i>
+            <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
             </a>
         </div>
-    </section>
+    </div>
 
-    <section class="p-4">
-        <div class="container text-center text-md-start">
-            <div class="row mt-3">
-                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        <i class="fas fa-gem me-3"></i>TellYourPhone
-                    </h6>
-                    <p>
-                        De beste telefoons en abonnementen, speciaal voor jou samengesteld.
-                    </p>
+    <!-- Alle merken sectie -->
+    <div class="container popular-section">
+        <h2>Alle merken</h2>
+        <div class="brand-row">
+            <div class="brand-card">
+                <img src="pictures/apple.png" alt="Apple">
+            </div>
+            <div class="brand-card">
+                <img src="pictures/samsung.png" alt="Samsung">
+            </div>
+            <div class="brand-card">
+                <img src="pictures/oppo.png" alt="Oppo">
+            </div>
+            <div class="brand-card">
+                <img src="pictures/oneplus.png" alt="OnePlus">
+            </div>
+            <div class="brand-card">
+                <img src="pictures/imgix.png" alt="Xiaomi">
+            </div>
+        </div>
+    </div>
+
+    <!-- Populaire telefoons met abonnement sectie -->
+    <div class="container product-section">
+        <h2 class="header">Populaire telefoons met abonnement</h2>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="card product-card standard-size" data-toggle="modal" data-target="#productModal16">
+                    <img class="card-img-top" src="pictures/Iphone15.png" alt="Phone 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Apple iPhone 15</h5>
+                        <p class="card-text">10 GB<br>120 minuten</p>
+                        <p class="card-text">€42,50/mnd</p>
+                    </div>
                 </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Producten
-                    </h6>
-                    <p><a href="#" class="text-reset">Telefoons</a></p>
-                    <p><a href="#" class="text-reset">Abonnementen</a></p>
-                    <p><a href="#" class="text-reset">Accessoires</a></p>
-                    <p><a href="#" class="text-reset">Aanbiedingen</a></p>
+            </div>
+            <div class="col-md-2">
+                <div class="card product-card standard-size" data-toggle="modal" data-target="#productModal17">
+                    <img class="card-img-top" src="pictures/GalaxyS24NonUltra.png" alt="Phone 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Samsung Galaxy S24</h5>
+                        <p class="card-text">20 GB<br>Onbp min</p>
+                        <p class="card-text">€47,50/mnd</p>
+                    </div>
                 </div>
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Nuttige links
-                    </h6>
-                    <p><a href="#" class="text-reset">Account</a></p>
-                    <p><a href="#" class="text-reset">Bestellingen</a></p>
-                    <p><a href="#" class="text-reset">Winkelwagen</a></p>
-                    <p><a href="#" class="text-reset">Help</a></p>
+            </div>
+            <div class="col-md-2">
+                <div class="card product-card standard-size" data-toggle="modal" data-target="#productModal18">
+                    <img class="card-img-top" src="pictures/Iphone14.png" alt="Phone 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Apple iPhone 14</h5>
+                        <p class="card-text">15 GB<br>150 minuten</p>
+                        <p class="card-text">€40,-/mnd</p>
+                    </div>
                 </div>
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Contact
-                    </h6>
-                    <p><i class="fas fa-home me-3"></i> Amsterdam, Nederland</p>
-                    <p><i class="fas fa-envelope me-3"></i> info@tellyourphone.com</p>
-                    <p><i class="fas fa-phone me-3"></i> + 31 234 567 88</p>
+            </div>
+            <div class="col-md-2">
+                <div class="card product-card standard-size" data-toggle="modal" data-target="#productModal19">
+                    <img class="card-img-top" src="pictures/GalaxyA55.png" alt="Phone 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Samsung Galaxy A55 5G</h5>
+                        <p class="card-text">15 GB<br>200 minuten</p>
+                        <p class="card-text">€22,50/mnd</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card product-card standard-size" data-toggle="modal" data-target="#productModal20">
+                    <img class="card-img-top" src="pictures/Iphone15Pro.png" alt="Phone 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Apple iPhone 15 Pro</h5>
+                        <p class="card-text">20 GB<br>Onbp min</p>
+                        <p class="card-text">€58,50/mnd</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card product-card standard-size" data-toggle="modal" data-target="#productModal21">
+                    <img class="card-img-top" src="pictures/GalaxyS24.png" alt="Phone 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Samsung Galaxy S24 Ultra</h5>
+                        <p class="card-text">20 GB<br>Onbp min</p>
+                        <p class="card-text">€64,50/mnd</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <div class="text-center p-4">
-        © 2024 Copyright:
-        <a class="text-reset fw-bold" href="#">TellYourPhone.com</a>
     </div>
-</footer>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Kenmerken sectie -->
+    <div class="container features">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Live Chat Ondersteuning</h5>
+                        <p class="card-text">Onze live chat is 24/7 beschikbaar om al je vragen te beantwoorden.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Loyaliteitsprogramma</h5>
+                        <p class="card-text">Spaar punten voor elke aankoop en wissel ze in voor kortingen en gratis
+                            producten.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Aanbevolen Producten</h5>
+                        <p class="card-text">Ontvang gepersonaliseerde aanbevelingen op basis van je browse- en
+                            koopgeschiedenis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+
+    <!-- Product vergelijking sectie -->
+    <div class="container product-comparison">
+        <h2>Vergelijk Producten</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Prijs</th>
+                    <th>Specificaties</th>
+                    <th>Beoordelingen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Apple iPhone 15</td>
+                    <td>€499</td>
+                    <td>4GB RAM, 64GB Opslag</td>
+                    <td>★★★★☆</td>
+                </tr>
+                <tr>
+                    <td>Samsung Galaxy A55 5G</td>
+                    <td>€599</td>
+                    <td>6GB RAM, 128GB Opslag</td>
+                    <td>★★★★★</td>
+                </tr>
+                <tr>
+                    <td>Apple iPhone 15 Pro</td>
+                    <td>€699</td>
+                    <td>8GB RAM, 256GB Opslag</td>
+                    <td>★★★☆☆</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modals for product details -->
+    <div class="modal fade" id="productModal1" tabindex="-1" role="dialog" aria-labelledby="productModalLabel1"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel1">Titanium</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Ontdek de kracht van Titanium met de nieuwste technologieën die een ongeëvenaarde ervaring
+                        bieden. Met een indrukwekkend display, krachtige prestaties en een elegant ontwerp is deze
+                        telefoon perfect voor iedereen die het beste wil.</p>
+                    <ul>
+                        <li>6.7 inch OLED-display</li>
+                        <li>Triple-camera systeem</li>
+                        <li>128GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal2" tabindex="-1" role="dialog" aria-labelledby="productModalLabel2"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel2">Onmogelijk dun</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Ervaar de dunste telefoon ooit gemaakt met de nieuwste innovaties in een slank en stijlvol
+                        ontwerp. Perfect voor mensen die op zoek zijn naar een lichtgewicht en krachtige smartphone.</p>
+                    <ul>
+                        <li>6.1 inch Super Retina XDR-display</li>
+                        <li>Dual-camera systeem</li>
+                        <li>64GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal3" tabindex="-1" role="dialog" aria-labelledby="productModalLabel3"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel3">Laat je licht stralen</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Laat je licht stralen met deze opvallende smartphone. Met verbeterde camera's en geavanceerde
+                        functies kun je prachtige foto's en video's maken, zelfs bij weinig licht.</p>
+                    <ul>
+                        <li>5.8 inch HD-display</li>
+                        <li>12MP camera</li>
+                        <li>32GB opslag</li>
+                        <li>4G LTE ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal4" tabindex="-1" role="dialog" aria-labelledby="productModalLabel4"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel4">Samsung Galaxy S24 Ultra</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>De Samsung Galaxy S24 Ultra biedt ongeëvenaarde prestaties met een verbluffend display en
+                        geavanceerde camera's. Perfect voor professionals en tech-liefhebbers.</p>
+                    <ul>
+                        <li>6.8 inch Dynamic AMOLED-display</li>
+                        <li>Quad-camera systeem</li>
+                        <li>256GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal5" tabindex="-1" role="dialog" aria-labelledby="productModalLabel5"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel5">Apple iPhone 15</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>De nieuwste iPhone 15 biedt een naadloze ervaring met geavanceerde functies en een prachtig
+                        ontwerp. Perfect voor iedereen die op zoek is naar een krachtige en stijlvolle smartphone.</p>
+                    <ul>
+                        <li>6.1 inch Super Retina XDR-display</li>
+                        <li>Dual-camera systeem</li>
+                        <li>128GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal6" tabindex="-1" role="dialog" aria-labelledby="productModalLabel6"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel6">Samsung Galaxy S24</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>De Samsung Galaxy S24 combineert kracht met elegantie. Met een geweldig display en
+                        geavanceerde functies is deze telefoon ideaal voor zowel werk als ontspanning.</p>
+                    <ul>
+                        <li>6.2 inch Dynamic AMOLED-display</li>
+                        <li>Triple-camera systeem</li>
+                        <li>128GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal7" tabindex="-1" role="dialog" aria-labelledby="productModalLabel7"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel7">Apple iPhone 15 Pro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>De iPhone 15 Pro is het toppunt van technologie met baanbrekende functies en een
+                        verfijnd ontwerp. Perfect voor professionals die op zoek zijn naar het beste.</p>
+                    <ul>
+                        <li>6.1 inch Super Retina XDR-display</li>
+                        <li>Triple-camera systeem</li>
+                        <li>256GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal8" tabindex="-1" role="dialog" aria-labelledby="productModalLabel8"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel8">Samsung Galaxy A55 5G</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>De Samsung Galaxy A55 5G biedt geweldige prestaties tegen een betaalbare prijs. Perfect voor
+                        mensen die op zoek zijn naar een krachtige en betrouwbare smartphone.</p>
+                    <ul>
+                        <li>6.5 inch Super AMOLED-display</li>
+                        <li>Quad-camera systeem</li>
+                        <li>128GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal9" tabindex="-1" role="dialog" aria-labelledby="productModalLabel9"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel9">OnePlus 12</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>De OnePlus 12 biedt premium functies en prestaties tegen een concurrerende prijs. Ideaal voor
+                        tech-enthousiastelingen die het beste willen zonder de bank te breken.</p>
+                    <ul>
+                        <li>6.7 inch Fluid AMOLED-display</li>
+                        <li>Triple-camera systeem</li>
+                        <li>256GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal10" tabindex="-1" role="dialog" aria-labelledby="productModalLabel10"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel10">Samsung Galaxy S24 Ultra</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>De Samsung Galaxy S24 Ultra biedt ongeëvenaarde prestaties met een verbluffend display en
+                        geavanceerde camera's. Perfect voor professionals en tech-liefhebbers.</p>
+                    <ul>
+                        <li>6.8 inch Dynamic AMOLED-display</li>
+                        <li>Quad-camera systeem</li>
+                        <li>256GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal11" tabindex="-1" role="dialog" aria-labelledby="productModalLabel11"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel11">Apple iPhone 15</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>De nieuwste iPhone 15 biedt een naadloze ervaring met geavanceerde functies en een prachtig
+                        ontwerp. Perfect voor iedereen die op zoek is naar een krachtige en stijlvolle smartphone.</p>
+                    <ul>
+                        <li>6.1 inch Super Retina XDR-display</li>
+                        <li>Dual-camera systeem</li>
+                        <li>128GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal12" tabindex="-1" role="dialog" aria-labelledby="productModalLabel12"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel12">Samsung Galaxy S24</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>De Samsung Galaxy S24 combineert kracht met elegantie. Met een geweldig display en
+                        geavanceerde functies is deze telefoon ideaal voor zowel werk als ontspanning.</p>
+                    <ul>
+                        <li>6.2 inch Dynamic AMOLED-display</li>
+                        <li>Triple-camera systeem</li>
+                        <li>128GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal13" tabindex="-1" role="dialog" aria-labelledby="productModalLabel13"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel13">Apple iPhone 15 Pro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>De iPhone 15 Pro is het toppunt van technologie met baanbrekende functies en een
+                        verfijnd ontwerp. Perfect voor professionals die op zoek zijn naar het beste.</p>
+                    <ul>
+                        <li>6.1 inch Super Retina XDR-display</li>
+                        <li>Triple-camera systeem</li>
+                        <li>256GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal14" tabindex="-1" role="dialog" aria-labelledby="productModalLabel14"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel14">Samsung Galaxy A55 5G</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>De Samsung Galaxy A55 5G biedt geweldige prestaties tegen een betaalbare prijs. Perfect voor
+                        mensen die op zoek zijn naar een krachtige en betrouwbare smartphone.</p>
+                    <ul>
+                        <li>6.5 inch Super AMOLED-display</li>
+                        <li>Quad-camera systeem</li>
+                        <li>128GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal15" tabindex="-1" role="dialog" aria-labelledby="productModalLabel15"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel15">OnePlus 12</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>De OnePlus 12 biedt premium functies en prestaties tegen een concurrerende prijs. Ideaal voor
+                        tech-enthousiastelingen die het beste willen zonder de bank te breken.</p>
+                    <ul>
+                        <li>6.7 inch Fluid AMOLED-display</li>
+                        <li>Triple-camera systeem</li>
+                        <li>256GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal16" tabindex="-1" role="dialog" aria-labelledby="productModalLabel16"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel16">Apple iPhone 15</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>De nieuwste iPhone 15 biedt een naadloze ervaring met geavanceerde functies en een prachtig
+                        ontwerp. Perfect voor iedereen die op zoek is naar een krachtige en stijlvolle smartphone.</p>
+                    <ul>
+                        <li>6.1 inch Super Retina XDR-display</li>
+                        <li>Dual-camera systeem</li>
+                        <li>128GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal17" tabindex="-1" role="dialog" aria-labelledby="productModalLabel17"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel17">Samsung Galaxy S24</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>De Samsung Galaxy S24 combineert kracht met elegantie. Met een geweldig display en
+                        geavanceerde functies is deze telefoon ideaal voor zowel werk als ontspanning.</p>
+                    <ul>
+                        <li>6.2 inch Dynamic AMOLED-display</li>
+                        <li>Triple-camera systeem</li>
+                        <li>128GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal18" tabindex="-1" role="dialog" aria-labelledby="productModalLabel18"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel18">Apple iPhone 14</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>De iPhone 14 biedt geweldige prestaties en een prachtig design. Perfect voor mensen die op zoek
+                        zijn naar een betrouwbare en krachtige smartphone.</p>
+                    <ul>
+                        <li>6.1 inch Super Retina XDR-display</li>
+                        <li>Dual-camera systeem</li>
+                        <li>128GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal19" tabindex="-1" role="dialog" aria-labelledby="productModalLabel19"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel19">Samsung Galaxy A55 5G</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>De Samsung Galaxy A55 5G biedt geweldige prestaties tegen een betaalbare prijs. Perfect voor
+                        mensen die op zoek zijn naar een krachtige en betrouwbare smartphone.</p>
+                    <ul>
+                        <li>6.5 inch Super AMOLED-display</li>
+                        <li>Quad-camera systeem</li>
+                        <li>128GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal20" tabindex="-1" role="dialog" aria-labelledby="productModalLabel20"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel20">Apple iPhone 15 Pro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>De iPhone 15 Pro is het toppunt van technologie met baanbrekende functies en een
+                        verfijnd ontwerp. Perfect voor professionals die op zoek zijn naar het beste.</p>
+                    <ul>
+                        <li>6.1 inch Super Retina XDR-display</li>
+                        <li>Triple-camera systeem</li>
+                        <li>256GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal21" tabindex="-1" role="dialog" aria-labelledby="productModalLabel21"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel21">Samsung Galaxy S24 Ultra</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>De Samsung Galaxy S24 Ultra biedt ongeëvenaarde prestaties met een verbluffend display en
+                        geavanceerde camera's. Perfect voor professionals en tech-liefhebbers.</p>
+                    <ul>
+                        <li>6.8 inch Dynamic AMOLED-display</li>
+                        <li>Quad-camera systeem</li>
+                        <li>256GB opslag</li>
+                        <li>5G ondersteuning</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Koop nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light text-muted mt-4 footer">
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <div class="me-5 d-none d-lg-block">
+                <span>Connect with us on social networks:</span>
+            </div>
+            <div>
+                <a href="#" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="#" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="me-4 text-reset">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </section>
+
+        <section class="p-4">
+            <div class="container text-center text-md-start">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>TellYourPhone
+                        </h6>
+                        <p>
+                            De beste telefoons en abonnementen, speciaal voor jou samengesteld.
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Producten
+                        </h6>
+                        <p><a href="#" class="text-reset">Telefoons</a></p>
+                        <p><a href="#" class="text-reset">Abonnementen</a></p>
+                        <p><a href="#" class="text-reset">Accessoires</a></p>
+                        <p><a href="#" class="text-reset">Aanbiedingen</a></p>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Nuttige links
+                        </h6>
+                        <p><a href="#" class="text-reset">Account</a></p>
+                        <p><a href="#" class="text-reset">Bestellingen</a></p>
+                        <p><a href="#" class="text-reset">Winkelwagen</a></p>
+                        <p><a href="#" class="text-reset">Help</a></p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Contact
+                        </h6>
+                        <p><i class="fas fa-home me-3"></i> Amsterdam, Nederland</p>
+                        <p><i class="fas fa-envelope me-3"></i> info@tellyourphone.com</p>
+                        <p><i class="fas fa-phone me-3"></i> + 31 234 567 88</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="text-center p-4">
+            © 2024 Copyright:
+            <a class="text-reset fw-bold" href="#">TellYourPhone.com</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript en jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+
+        // Functie voor het wisselen tussen donkere en lichte modus
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
 </body>
+
 </html>
